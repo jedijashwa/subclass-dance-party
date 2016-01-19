@@ -2,6 +2,7 @@ var SquareDancer = function(top, left, timeBetweenSteps){
 
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('square-dancer');
+  this.lastMove = "down";
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -11,13 +12,23 @@ SquareDancer.prototype = Object.create(Dancer.prototype);
 SquareDancer.prototype.constructor = SquareDancer;
 
 SquareDancer.prototype.step = function(){
-
   // call the old version of step at the beginning of any call to this new version of step
   Dancer.prototype.step.call(this);
-  // toggle() is a jQuery method to show/hide the <span> tag.
-  // See http://api.jquery.com/category/effects/ for this and
-  // other effects you can use on a jQuery-wrapped html tag.
-  this.$node.toggle();
+  var left = this.$node.position().left;
+  var top = this.$node.position().top;
+  if(this.lastMove === "down"){
+    this.setPosition(top, left + 25);
+    this.lastMove = "right";
+  } else if (this.lastMove === "right"){
+    this.setPosition(top + 25, left);
+    this.lastMove = "up";
+  } else if (this.lastMove === "up"){
+    this.setPosition(top, left - 25);
+    this.lastMove = "left";
+  } else {
+    this.setPosition(top - 25, left);
+    this.lastMove = "down";
+  }
 };
 
 
