@@ -3,6 +3,7 @@ var ShyDancer = function(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
 
   this.$node.addClass('shy-dancer');
+  this.$node.mouseover(this.run.bind(this));
 };
 
 ShyDancer.prototype = Object.create(Dancer.prototype);
