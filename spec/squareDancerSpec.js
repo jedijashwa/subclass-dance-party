@@ -26,18 +26,32 @@ describe("squareDancer", function() {
       expect(squareDancer.step.callCount).to.be.equal(2);
     });
 
-    it("should move to the right when step is called once", function(){
+    it("should move in a square when step is called", function(){
       sinon.spy(squareDancer, "step");
       expect(squareDancer.step.callCount).to.be.equal(0);
-      var oldLeft = squareDancer.left;
+      var originalLeft = squareDancer.left;
+      var originalTop = squareDancer.top;
       clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
       clock.tick(timeBetweenSteps);
 
       expect(squareDancer.step.callCount).to.be.equal(1);
       var newLeft = squareDancer.left;
-      expect(newLeft).to.equal(oldLeft + 25);
+      expect(newLeft).to.equal(originalLeft + 25);
+
+      clock.tick(timeBetweenSteps);
+      expect(squareDancer.step.callCount).to.be.equal(2);
+      var newTop = squareDancer.top;
+      expect(newTop).to.equal(originalTop + 25);
+
+      clock.tick(timeBetweenSteps);
+      expect(squareDancer.step.callCount).to.be.equal(3);
+      newLeft = squareDancer.left;
+      expect(newLeft).to.equal(originalLeft);
+
+      clock.tick(timeBetweenSteps);
+      expect(squareDancer.step.callCount).to.be.equal(4);
+      newTop = squareDancer.top;
+      expect(newTop).to.equal(originalTop);
     });
-
-
   });
 });
