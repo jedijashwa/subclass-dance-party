@@ -32,5 +32,9 @@ body, a:link, a:visited, a:active{
 }
 
 .bad-dancer {
-  border-color: white;
+  border: 1px;
+  height: 80px;
+  width: 72.5px;
+  background-image: url("http://i216.photobucket.com/albums/cc269/erinalexa00/Movies%20and%20TV/SNL/myspace-graphic-funny057.gif");
+  background-size: 72.5px 80px;
 }
