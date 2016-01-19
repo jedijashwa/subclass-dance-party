@@ -5,6 +5,8 @@ var Dancer = function(top, left, timeBetweenSteps){
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;
+  this.resume = left;
+
   this.setPosition(top, left);
   this.step();
 };
@@ -29,5 +31,12 @@ Dancer.prototype.setPosition = function(top, left){
 };
 
 Dancer.prototype.lineUp = function () {
-  this.$node.animate({left: 25});
+  this.resume = this.left;
+  this.left = 25;
+  this.$node.animate({left: this.left});
+};
+
+Dancer.prototype.resumeDance = function () {
+  this.left = this.resume;
+  this.$node.animate({left: this.left});
 };

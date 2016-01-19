@@ -38,15 +38,6 @@ $(document).ready(function(){
     }
     console.log('end of func');
   });
-
-  $('.stopButton').on('click', function(event){
-    var newestTimeout = window.setTimeout(function(){},0);
-    while(newestTimeout > 0){
-      console.log(newestTimeout);
-      window.clearTimeout(newestTimeout);
-      newestTimeout--;
-    }
-  });
 });
 
 
