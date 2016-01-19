@@ -16,17 +16,22 @@ SquareDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
   var left = this.$node.position().left;
   var top = this.$node.position().top;
+  console.log(top, left);
   if(this.lastMove === "down"){
-    this.setPosition(top, left + 25);
+    // this.setPosition(top, left + 25);
+    this.$node.animate({left: left + 25});
     this.lastMove = "right";
   } else if (this.lastMove === "right"){
-    this.setPosition(top + 25, left);
+    // this.setPosition(top + 25, left);
+    this.$node.animate({top: top + 25});
     this.lastMove = "up";
   } else if (this.lastMove === "up"){
-    this.setPosition(top, left - 25);
+    // this.setPosition(top, left - 25);
+    this.$node.animate({left: left - 25});
     this.lastMove = "left";
   } else {
-    this.setPosition(top - 25, left);
+    // this.setPosition(top - 25, left);
+    this.$node.animate({top: top - 25});
     this.lastMove = "down";
   }
 };
