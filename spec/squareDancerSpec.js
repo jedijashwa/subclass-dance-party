@@ -13,12 +13,6 @@ describe("squareDancer", function() {
     expect(squareDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it("should have a step function that makes its node blink", function() {
-    sinon.spy(squareDancer.$node, 'toggle');
-    squareDancer.step();
-    expect(squareDancer.$node.toggle.called).to.be.true;
-  });
-
   describe("dance", function(){
     it("should call step at least once per second", function(){
       sinon.spy(squareDancer, "step");
@@ -31,5 +25,19 @@ describe("squareDancer", function() {
       clock.tick(timeBetweenSteps);
       expect(squareDancer.step.callCount).to.be.equal(2);
     });
+
+    it("should move to the right when step is called once", function(){
+      sinon.spy(squareDancer, "step");
+      expect(squareDancer.step.callCount).to.be.equal(0);
+      var oldLeft = squareDancer.left;
+      clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
+      clock.tick(timeBetweenSteps);
+
+      expect(squareDancer.step.callCount).to.be.equal(1);
+      var newLeft = squareDancer.left;
+      expect(newLeft).to.equal(oldLeft + 25);
+    });
+    
+    
   });
 });
