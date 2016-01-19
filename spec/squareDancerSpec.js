@@ -37,7 +37,7 @@ describe("squareDancer", function() {
       var newLeft = squareDancer.left;
       expect(newLeft).to.equal(oldLeft + 25);
     });
-    
-    
+
+
   });
 });
