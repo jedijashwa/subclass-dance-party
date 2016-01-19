@@ -28,5 +28,9 @@ body, a:link, a:visited, a:active{
 
 .square-dancer {
   border-radius:0px;
+  border-color: blue;
 }
 
+.bad-dancer {
+  border-color: white;
+}

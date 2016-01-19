@@ -2,7 +2,7 @@ var BadDancer = function(top, left, timeBetweenSteps){
 
   Dancer.call(this, top, left, timeBetweenSteps);
 
-
+  this.$node.addClass('bad-dancer');
 };
 
 BadDancer.prototype = Object.create(Dancer.prototype);
