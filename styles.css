@@ -35,9 +35,17 @@ body, a:link, a:visited, a:active{
 }
 
 .bad-dancer {
-  border: 1px;
+  border: 0;
   height: 80px;
   width: 72.5px;
   background-image: url("http://i216.photobucket.com/albums/cc269/erinalexa00/Movies%20and%20TV/SNL/myspace-graphic-funny057.gif");
   background-size: 72.5px 80px;
+}
+
+.shy-dancer {
+  border: 0;
+  background-image: url('http://orig05.deviantart.net/2f6a/f/2014/153/1/9/007_2_by_elle_rei-d7kqgs8.gif');
+  height: 80px;
+  width: 80px;
+  background-size: 80px 80px;
 }
