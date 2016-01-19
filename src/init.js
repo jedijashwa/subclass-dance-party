@@ -36,6 +36,16 @@ $(document).ready(function(){
     for (var i = 0; i < dancers.length; i++) {
       dancers[i].lineUp();
     }
+    console.log('end of func');
+  });
+
+  $('.stopButton').on('click', function(event){
+    var newestTimeout = window.setTimeout(function(){},0);
+    while(newestTimeout > 0){
+      console.log(newestTimeout);
+      window.clearTimeout(newestTimeout);
+      newestTimeout--;
+    }
   });
 });
 
