@@ -1,3 +1,5 @@
+var discoTimeouts = [];
+
 $(document).ready(function(){
   window.dancers = [];
 
@@ -97,16 +99,19 @@ var turnOffTiny = function () {
 
 var turnOffDisco = function () {
   $('.discoButton').data("disco", "false");
+  for (var i = 0; i < discoTimeouts.length; i++) {
+    clearTimeout(discoTimeouts[i]);
+  }
   $('.disco-ball').animate({top: -200}, 'slow');
   $('.disco-light').css({'background-color': 'rgba(0, 0, 0, 0)', 'z-index': 0});
 }
 
 var discoFlashing = function () {
-  setTimeout( function () {
+  discoTimeouts.push(setTimeout( function () {
     $('.disco-light').css({'background-color': 'rgba(0, 0, 0, 0)'});
-    setTimeout( function () {
+    discoTimeouts.push(setTimeout( function () {
       $('.disco-light').css({'background-color': 'rgba(0, 0, 0, 0.8)'});
       discoFlashing();
-    }, 100);
-  }, 100);
+    }, 100));
+  }, 100));
 }
