@@ -96,4 +96,5 @@ a:link, a:visited, a:active{
 
 .speech-bubble {
   position: absolute;
+  display: none;
 }

@@ -12,19 +12,38 @@ ShyDancer.prototype.constructor = ShyDancer;
 
 ShyDancer.prototype.run = function () {
   this.touched++;  
-  if (this.touched === 9) {
-    this.top = randomNegative($(window).height() + 100);
-    this.left = randomNegative($(window).width() + 100);
-  } else {
+  if (this.touched < 6) {
     this.top += Math.random() * 300 - 150;
     this.left += Math.random() * 300 - 150;
+    this.$node.animate({top: this.top, left: this.left});
+    if (this.touched === 2){
+      var $speechBubble = new SpeechBubble(this.top, this.left+40, 100, 1, 1).$node;
+      setTimeout(function () {
+        $('body').append($speechBubble);
+        $speechBubble.fadeIn("fast").delay(500).fadeOut("fast");
+      }, 400);
+    } else if (this.touched === 4) {
+      var $speechBubble = new SpeechBubble(this.top, this.left-60, 100, 1, 2).$node;
+      setTimeout(function () {
+        $('body').append($speechBubble);
+        $speechBubble.fadeIn("fast").delay(500).fadeOut("fast");
+      }, 400);
+    }
+  } 
+  
+  else if (this.touched === 6) {
+    var $speechBubble = new SpeechBubble(this.top, this.left+40, 100, 1, 3).$node;
+    setTimeout(function () {
+      $('body').append($speechBubble);
+      $speechBubble.fadeIn("fast").delay(500).fadeOut("fast");
+    }, 400);
+    this.top = randomNegative($(window).height() + 100);
+    this.left = randomNegative($(window).width() + 100);
+    context = this;
+    setTimeout(function () {
+      context.$node.animate({top: context.top, left: context.left});
+    }, 1000);
   }
-  this.$node.animate({top: this.top, left: this.left});
-  speechBubble = new SpeechBubble(this.top, this.left+40, 100, 1, 1).$node;
-  setTimeout(function () {
-    $('body').append(speechBubble);
-    //$('body').remove();
-  }, 400);
 };
 
 ShyDancer.prototype.lineUp = function () {
