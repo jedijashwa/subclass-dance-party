@@ -49,3 +49,11 @@ body, a:link, a:visited, a:active{
   width: 80px;
   background-size: 80px 80px;
 }
+
+.showy-dancer {
+  border: 0;
+  height: 100px;
+  width: 70.3px;
+  background-image: url("https://lifeislaughterandtears.files.wordpress.com/2014/11/download_20140801_111111.gif?w=211&h=300");
+  background-size: 70.3px 100px;
+}
