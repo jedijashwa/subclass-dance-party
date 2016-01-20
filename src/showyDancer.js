@@ -11,16 +11,22 @@ ShowyDancer.prototype.constructor = ShowyDancer;
 
 ShowyDancer.prototype.step = function () {
   BadDancer.prototype.step.call(this);
+  var showingOff = false;
   for (var i = 0; i < window.dancers.length; i++) {
     if (this.dancersIndex !== i) {
       if (this.distance(window.dancers[i].top, window.dancers[i].left) < 100) {
-        this.showOff();
+        showingOff = true;
         break;
       }
     }
   }
+  if (showingOff) {
+    this.$node.addClass('show-off');
+  } else {
+    this.$node.removeClass('show-off');
+  }
 };
 
 ShowyDancer.prototype.showOff = function () {
-  alert("I'm showing off!");
+  this.$node.addClass('show-off');
 };

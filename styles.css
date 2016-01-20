@@ -52,8 +52,16 @@ body, a:link, a:visited, a:active{
 
 .showy-dancer {
   border: 0;
-  height: 100px;
-  width: 70.3px;
-  background-image: url("https://lifeislaughterandtears.files.wordpress.com/2014/11/download_20140801_111111.gif?w=211&h=300");
-  background-size: 70.3px 100px;
+  height: 80px;
+  width: 70px;
+  background-image: url("http://ih1.redbubble.net/image.44341716.7216/sticker,375x360.u3.png");
+  background-size: 93.75px 80px;
+  background-position: center;
+}
+
+.show-off {
+  height: 93.67px;
+  width: 60px;
+  background-image: url("https://45.media.tumblr.com/fec198149ed65676b566d1863134efb6/tumblr_nd50poz54c1qala6eo2_500.gif");
+  background-size: 166.67px 93.67px;
 }
