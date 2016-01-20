@@ -98,3 +98,9 @@ a:link, a:visited, a:active{
   position: absolute;
   display: none;
 }
+
+.disco-ball {
+  position: absolute;
+  left: calc(50% - 100px);
+  top: -200px;
+}

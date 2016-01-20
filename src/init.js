@@ -41,6 +41,7 @@ $(document).ready(function(){
         dancers[i].lineUp();
       }
     }
+    
     if(linedUp){
       $(this).text("line up");
       $(this).data("lined-up", "false");
@@ -53,19 +54,45 @@ $(document).ready(function(){
   $('.tinyButton').on('click', function(event) {
     var tinified = JSON.parse($(this).data("tinified"));
     if(tinified){
-      $(this).text("tiny dancer");
-      $(this).data("tinified", "false");
-      $('.dancer').removeClass('tiny');
-      $('.tinyButton').addClass('tiny');
-      $('.tiny-div').html('');
+      turnOffTiny();
     } else {
       $('.dancer').addClass('tiny');
       $('.tinyButton').removeClass('tiny');
       $(this).text("normal");
       $(this).data("tinified", "true");
       $('.tiny-div').html('<iframe width="100%" height="150%" src="https://www.youtube.com/embed/hoskDZRLOCs?controls=0&autoplay=1&disablekb=1" frameborder="0"></iframe>');
+      turnOffDisco();
     }
+  });
+  
+  $('.discoButton').on('click', function(event) {
+    var disco = JSON.parse($(this).data("disco"));
+    // for (var i = 0; i < dancers.length; i++) {
+    //   if(linedUp){
+    //     dancers[i].resumeDance();
+    //   } else {
+    //     dancers[i].lineUp();
+    //   }
+    // }
+    
+    if(disco){
+      turnOffDisco();
+    } else {
+      $(this).data("disco", "true");
+      turnOffTiny();
+      $('.disco-ball').animate({top: $('.topbar').css('height')}, 'slow');    }
   });
 });
 
+var turnOffTiny = function () {
+  $('.tinyButton').text("tiny dancer");
+  $('.tinyButton').data("tinified", "false");
+  $('.dancer').removeClass('tiny');
+  $('.tinyButton').addClass('tiny');
+  $('.tiny-div').html('');
+}
 
+var turnOffDisco = function () {
+  $('.discoButton').data("disco", "false");
+  $('.disco-ball').animate({top: -200}, 'slow');
+}
