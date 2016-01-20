@@ -16,16 +16,16 @@ SquareDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
 
   if(this.lastMove === "down"){
-    this.left += 25;
+    this.left += 40;
     this.lastMove = "right";
   } else if (this.lastMove === "right"){
-    this.top += 25;
+    this.top += 40;
     this.lastMove = "up";
   } else if (this.lastMove === "up"){
-    this.left -= 25;
+    this.left -= 40;
     this.lastMove = "left";
   } else {
-    this.top -= 25;
+    this.top -= 40;
     this.lastMove = "down";
   }
 

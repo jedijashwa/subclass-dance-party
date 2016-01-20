@@ -31,7 +31,7 @@ body, a:link, a:visited, a:active{
 
 .square-dancer {
   border-radius:0px;
-  border-color: blue;
+  border: 25px solid blue;
 }
 
 .bad-dancer {
