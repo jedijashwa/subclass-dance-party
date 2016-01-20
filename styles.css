@@ -28,7 +28,7 @@ a:link, a:visited, a:active{
   position: absolute;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index:200;
+  z-index:101;
 }
 .title{
   background-color: #777;
@@ -92,6 +92,7 @@ a:link, a:visited, a:active{
   position: absolute;
   top: calc(100% - 29px);
   left: calc(100% - 177px);
+  z-index: 101;
 }
 
 .speech-bubble {
@@ -103,4 +104,15 @@ a:link, a:visited, a:active{
   position: absolute;
   left: calc(50% - 100px);
   top: -200px;
+  z-index: 102;
+}
+
+.disco-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0, 0);
+  z-index: 0;
 }

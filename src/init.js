@@ -80,7 +80,10 @@ $(document).ready(function(){
     } else {
       $(this).data("disco", "true");
       turnOffTiny();
-      $('.disco-ball').animate({top: $('.topbar').css('height')}, 'slow');    }
+      $('.disco-light').css({'background-color': 'rgba(0, 0, 0, 0.8)', 'z-index': 100});
+      discoFlashing();
+      $('.disco-ball').animate({top: $('.topbar').css('height')}, 'slow');    
+    }
   });
 });
 
@@ -95,4 +98,15 @@ var turnOffTiny = function () {
 var turnOffDisco = function () {
   $('.discoButton').data("disco", "false");
   $('.disco-ball').animate({top: -200}, 'slow');
+  $('.disco-light').css({'background-color': 'rgba(0, 0, 0, 0)', 'z-index': 0});
+}
+
+var discoFlashing = function () {
+  setTimeout( function () {
+    $('.disco-light').css({'background-color': 'rgba(0, 0, 0, 0)'});
+    setTimeout( function () {
+      $('.disco-light').css({'background-color': 'rgba(0, 0, 0, 0.8)'});
+      discoFlashing();
+    }, 100);
+  }, 100);
 }
