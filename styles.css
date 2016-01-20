@@ -93,3 +93,7 @@ a:link, a:visited, a:active{
   top: calc(100% - 29px);
   left: calc(100% - 177px);
 }
+
+.speech-bubble {
+  position: absolute;
+}
