@@ -13,7 +13,7 @@ ShowyDancer.prototype.step = function () {
   var showingOff = false;
   for (var i = 0; i < window.dancers.length; i++) {
     if (this.dancersIndex !== i) {
-      if (this.distance(window.dancers[i].top, window.dancers[i].left) < 125) {
+      if (this.distance(window.dancers[i].top, window.dancers[i].left) < 150) {
         showingOff = true;
         break;
       }

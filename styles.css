@@ -5,19 +5,28 @@ body{
   margin: 0px;
   background-image: url('http://antoine.goutenoir.com/games/discollision/img/bg/dancefloor_02.gif');
   font-size: 18px;
+  font-family: sans-serif;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
+  width: 175px;
+  text-align: center;
 }
 .title, .actionButton, a{
-  padding:5px 12px;
+  padding:2px 5px;
   float:right;
+  background-color: #555;
+  margin: 2px;
+}
+
+.actionButton {
+  float: left;
+  background-color: rgba(100, 100, 100, 0.8);
 }
 .topbar{
   position: absolute;
-  height:32px;
   width: 100%;
-  background-color: #555;
+  background-color: rgba(0, 0, 0, 0.6);
   z-index:200;
 }
 .title{
@@ -69,4 +78,17 @@ body, a:link, a:visited, a:active{
 
 .tiny {
   transform: scale(0.5, 0.5);
+}
+
+.tiny-div{
+  position: fixed;
+  height: 150%;
+  width: 100%;
+  top: -60%;
+}
+
+.tiny-button-div {
+  position: absolute;
+  top: calc(100% - 29px);
+  left: calc(100% - 177px);
 }
