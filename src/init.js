@@ -33,10 +33,22 @@ $(document).ready(function(){
   });
 
   $('.lineUpButton').on('click', function(event) {
+    var linedUp = JSON.parse($(this).data("lined-up"));
+    console.log(linedUp);
     for (var i = 0; i < dancers.length; i++) {
-      dancers[i].lineUp();
+      if(linedUp){
+        dancers[i].resumeDance();
+      } else {
+        dancers[i].lineUp();
+      }
     }
-    console.log('end of func');
+    if(linedUp){
+      $(this).text("line up");
+      $(this).data("lined-up", "false");
+    } else {
+      $(this).text("resume dancing");
+      $(this).data("lined-up", "true");
+    }
   });
 });
 
