@@ -12,6 +12,7 @@ ShyDancer.prototype.constructor = ShyDancer;
 
 ShyDancer.prototype.run = function () {
   this.touched++;  
+  
   if (this.touched < 6) {
     this.top += Math.random() * 300 - 150;
     this.left += Math.random() * 300 - 150;
