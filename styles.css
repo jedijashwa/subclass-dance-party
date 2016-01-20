@@ -65,3 +65,7 @@ body, a:link, a:visited, a:active{
   background-image: url("https://45.media.tumblr.com/fec198149ed65676b566d1863134efb6/tumblr_nd50poz54c1qala6eo2_500.gif");
   background-size: 166.67px 93.67px;
 }
+
+.tiny {
+  transform: scale(0.5, 0.5);
+}
