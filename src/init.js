@@ -34,7 +34,6 @@ $(document).ready(function(){
 
   $('.lineUpButton').on('click', function(event) {
     var linedUp = JSON.parse($(this).data("lined-up"));
-    console.log(linedUp);
     for (var i = 0; i < dancers.length; i++) {
       if(linedUp){
         dancers[i].resumeDance();
@@ -48,6 +47,21 @@ $(document).ready(function(){
     } else {
       $(this).text("resume dancing");
       $(this).data("lined-up", "true");
+    }
+  });
+
+  $('.tinyButton').on('click', function(event) {
+    var tinified = JSON.parse($(this).data("tinified"));
+    if(tinified){
+      $(this).text("tiny dancer");
+      $(this).data("tinified", "false");
+      $('.dancer').removeClass('tiny');
+      $('.tinyButton').addClass('tiny');
+    } else {
+      $('.dancer').addClass('tiny');
+      $('.tinyButton').removeClass('tiny');
+      $(this).text("normal");
+      $(this).data("tinified", "true");
     }
   });
 });
