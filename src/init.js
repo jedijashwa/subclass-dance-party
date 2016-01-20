@@ -57,11 +57,13 @@ $(document).ready(function(){
       $(this).data("tinified", "false");
       $('.dancer').removeClass('tiny');
       $('.tinyButton').addClass('tiny');
+      $('.tiny-div').html('');
     } else {
       $('.dancer').addClass('tiny');
       $('.tinyButton').removeClass('tiny');
       $(this).text("normal");
       $(this).data("tinified", "true");
+      $('.tiny-div').html('<iframe width="100%" height="150%" src="https://www.youtube.com/embed/hoskDZRLOCs?controls=0&autoplay=1&disablekb=1" frameborder="0"></iframe>');
     }
   });
 });
