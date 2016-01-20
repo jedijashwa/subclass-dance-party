@@ -40,3 +40,7 @@ Dancer.prototype.resumeDance = function () {
   this.left = this.resume;
   this.$node.animate({left: this.left});
 };
+
+Dancer.prototype.distance = function (top, left) {
+  return Math.sqrt(Math.pow((this.top - top), 2) + Math.pow((this.left - left), 2));
+};
